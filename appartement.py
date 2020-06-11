@@ -23,7 +23,6 @@ for page in pages:
     for tag in my_table:
         data.append(tag.text.strip())
 
-
 #Creating columns
 location = data[1::3]
 size = data[2::3]
@@ -36,7 +35,6 @@ df['distance_center'] = location
 df['price'] = price
 
 df.to_csv(r'C:\Users\st-am\OneDrive\Documents\Data analytics\web_scrapping\apartments111.csv', index = False)
-
 
 ####################################
 # DATA CLEANING
@@ -64,19 +62,6 @@ df['price'].replace('', np.nan, inplace=True)
 df=df.dropna()
 df = df[df['price'] < 10000]  
 
-#df.to_csv(r'C:\Users\st-am\OneDrive\Documents\Data analytics\web_scrapping\apartments.csv', index = False)
-
-
-df = pd.read_csv(r'C:\Users\st-am\OneDrive\Documents\Data analytics\web_scrapping\apartments.csv', low_memory = False)
-
-
-
-    
-    
-
-
-
-
 ####################################
 # DATA VIZ
 ####################################
@@ -88,7 +73,6 @@ df['price'].mean()
 #Distribution of the prices
 sns.set(font_scale=1.2)
 sns.distplot(df['price'], color="red", axlabel='Prices ($)').set(title='Distribution of Prices')
-
 
 #Heatmap of prices
 some_flats = df[(df['price']<3000) & (df['size']!= 7.5)]     
@@ -105,7 +89,6 @@ plot1 = df.groupby('size')['price'].mean().plot(kind='bar', figsize=(10,5), colo
 plot1.set_xlabel("Size",fontsize=14)
 plot1.set_ylabel("Price ($)",fontsize=14)
 plot1.title.set_size(16)
-
 
 #Number of apartments by size
 plot2=df['size'].value_counts().plot(kind='barh', color='salmon',figsize=(13,7),\
@@ -125,14 +108,3 @@ for i in plot2.patches:
             str(round((i.get_width()/total)*100, 1))+'%', fontsize=15,
 color='black')
 plot2.invert_yaxis()
-
-
-
-
-
-df.groupby('size')['price'].mean()
-
-
-
-
-
