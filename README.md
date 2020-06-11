@@ -4,6 +4,6 @@
 
 Article detailing analysis here: https://towardsdatascience.com/using-data-science-to-look-at-montreals-apartment-rental-crisis-cffea9ee6b00
 
-Data collected in apartment.csv file
+Data collected available in apartment.csv file
 
 
