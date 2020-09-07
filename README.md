@@ -1,4 +1,6 @@
 # scraping_apartments and data visualization
+
+# Description
 1. Web scraping apartments in Montreal from Kijiji
 2. Data Visualization, analyzing the current rental market
 
